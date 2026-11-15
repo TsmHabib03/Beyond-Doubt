@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Beyond Doubt — Apparel & Clothing</title>
+  <meta name="description" content="Explore Beyond Doubt jerseys, front and back. Shop on Shopee or Lazada, and find our North Fairview, Quezon City contact details.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200..700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="assets/beyond-doubt/favicon.png">
+  <meta name="theme-color" content="#EDEDE8">
+  <meta property="og:title" content="Beyond Doubt — Apparel & Clothing">
+  <meta property="og:description" content="Explore the jersey collection. North Fairview, Quezon City.">
+  
+  <style>
+    :root {
+      --bg: #EDEDE8;
+      --ghost: #DCDCD5;
+      --ink: #21221F;
+      --muted: #60615A;
+      --line: #CDCEC6;
+      --dot: #B8BAB1;
+      --peach: #FEDBDA;
+      --pink: #FCB7CC;
+      --sage: #C8C997;
+      --butter: #F5B55A;
+      --n: calc(100vw / 1440);
+      --u: min(100vw / 1440, 100vh / 900);
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; }
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Inter", system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    button { font: inherit; color: inherit; cursor: pointer; }
+    a { color: inherit; text-decoration: none; }
+    button { padding: 0; }
+    :focus-visible { outline: 1px solid var(--ink); outline-offset: 6px; }
+    .hero { position: relative; width: 100%; height: 100%; overflow: hidden; }
+    .filters { position: absolute; width: 0; height: 0; overflow: hidden; pointer-events: none; }
+    .caps {
+      font-size: max(9px, calc(10.5 * var(--n)));
+      font-weight: 500;
+      letter-spacing: .32em;
+      text-transform: uppercase;
+      line-height: 1.62;
+    }
+    .chrome { position: absolute; z-index: 400; }
+    .logo {
+      left: calc(46 * var(--n)); top: calc(30 * var(--n));
+      font-size: max(22px, calc(30 * var(--n)));
+      font-weight: 700; letter-spacing: -.035em; line-height: 1;
+    }
+    .logo sup { font-size: .5em; font-weight: 500; vertical-align: .9em; margin-left: .04em; }
+    .tagline {
+      left: 50%; top: calc(37 * var(--n)); transform: translateX(-50%);
+      text-align: center; white-space: nowrap; padding-left: .32em;
+    }
+    .nav { right: calc(39 * var(--n)); top: calc(32 * var(--n)); display: flex; gap: calc(16 * var(--n)); align-items: center; }
+    .menu { font-size: max(9px, calc(9.5 * var(--n))); }
+    .menu:hover { opacity: .6; }
+    .round {
+      display: grid; place-items: center; border: 1px solid var(--line);
+      border-radius: 50%; background: transparent; transition: border-color .25s ease;
+    }
+    .round:hover { border-color: var(--ink); }
+    .bag { position: relative; width: max(28px, calc(35 * var(--n))); height: max(28px, calc(35 * var(--n))); }
+    .bag svg { width: 42%; height: 42%; }
+    svg { fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; }
+    .badge {
+      position: absolute; top: -5px; right: -5px; height: 17px; min-width: 17px;
+      padding: 0 4px; display: grid; place-items: center;
+      border-radius: 20px; background: var(--ink); color: var(--bg);
+      font-size: 9.5px; line-height: 1; font-weight: 600; transform: scale(0);
+    }
+    .badge.visible { transform: scale(1); }
+    .left-label { left: calc(46 * var(--n)); top: calc(131 * var(--n)); }
+    .right-label { right: calc(38 * var(--n)); top: calc(132 * var(--n)); text-align: right; }
+    .vertical-label {
+      left: calc(26 * var(--n)); top: calc(447 * var(--n)); width: 0;
+      display: flex; justify-content: center; white-space: nowrap;
+      transform: translateY(-50%) rotate(-90deg);
+      font-size: max(8px, calc(9 * var(--n)));
+    }
+    .index { left: calc(46 * var(--n)); bottom: calc(52 * var(--n)); display: flex; align-items: center; }
+    .index-window {
+      height: 1em; overflow: hidden; font-size: max(30px, calc(50 * var(--n)));
+      font-weight: 200; letter-spacing: -.04em; line-height: 1;
+    }
+    .index-number { display: block; transition: transform .7s cubic-bezier(.65,0,.35,1); }
+    .index-bar { width: 1px; height: calc(28 * var(--n)); background: var(--ink); opacity: .45; margin: 0 calc(20 * var(--n)); }
+    .index-labels { position: relative; min-width: 12em; font-size: max(8px, calc(9.5 * var(--n))); }
+    .index-label { transition: opacity .45s ease, transform .45s ease; }
+    .choose-label { position: absolute; left: 0; top: 0; opacity: 0; transform: translateY(8px); }
+    .detail .collection-label { opacity: 0; transform: translateY(-8px); }
+    .detail .choose-label { opacity: 1; transform: translateY(0); }
+    .scroll-hint {
+      bottom: calc(59 * var(--n)); left: 50%; transform: translateX(-50%);
+      display: flex; align-items: center; gap: calc(14 * var(--n));
+      white-space: nowrap; font-size: max(8px, calc(9.5 * var(--n)));
+    }
+    .scroll-hint svg { width: max(8px, calc(11 * var(--n))); height: calc(16 * var(--n)); min-height: 12px; }
+    .stage {
+      position: absolute; width: calc(1440 * var(--u)); height: calc(900 * var(--u));
+      left: 50%; top: 50%; transform: translate(-50%, -50%);
+      touch-action: pan-y; cursor: grab; user-select: none; -webkit-user-select: none;
+    }
+    .stage.dragging, .stage.dragging .item { cursor: grabbing; }
+    .detail .stage { cursor: default; }
+    .ghost {
+      position: absolute; left: 0; top: calc(109 * var(--u)); width: 100%; margin: 0;
+      text-align: center; font-size: calc(295 * var(--u)); font-weight: 700;
+      letter-spacing: -.02em; line-height: 1; color: var(--ghost);
+      pointer-events: none; user-select: none;
+    }
+    .shadow {
+      position: absolute; left: calc(370 * var(--u)); top: calc(690 * var(--u));
+      width: calc(700 * var(--u)); height: calc(48 * var(--u)); border-radius: 50%;
+      background: radial-gradient(ellipse, rgba(120,96,86,.16) 0%, rgba(120,96,86,.07) 55%, transparent 100%);
+      filter: blur(calc(3 * var(--u))); pointer-events: none;
+    }
+    .dots { position: absolute; left: 50%; top: calc(747.5 * var(--u)); transform: translateX(-50%); display: flex; gap: calc(12 * var(--u)); pointer-events: none; }
+    .dot { width: max(6px, calc(9 * var(--u))); height: max(6px, calc(9 * var(--u))); border-radius: 50%; background: var(--dot); transition: background-color .5s ease; }
+    .dot.active { background: var(--ink); }
+    .item {
+      position: absolute; left: 0; top: 0; width: calc(510 * var(--u)); height: calc(510 * var(--u));
+      margin: calc(-255 * var(--u)); transform-origin: center; cursor: pointer;
+      will-change: transform, opacity; outline-offset: calc(-65 * var(--u));
+    }
+    .art, .art2, .fly {
+      background-image: var(--sheet); background-size: 500% 400%; background-repeat: no-repeat;
+      filter: url(#clean);
+    }
+    .art, .art2 { position: absolute; inset: 0; pointer-events: none; }
+    .art2 { opacity: 0; }
+    .swap .art2 { opacity: 1; transition: opacity .35s ease; }
+    .close {
+      position: absolute; z-index: 300; width: max(34px, calc(44 * var(--u))); height: max(34px, calc(44 * var(--u)));
+      background: rgba(249,242,233,.7); opacity: 0; transform: translate(-50%,-50%) scale(.6);
+      pointer-events: none; visibility: hidden;
+      transition: opacity .35s ease, transform .45s cubic-bezier(.22,1,.36,1), border-color .25s ease, visibility 0s .45s;
+    }
+    .close svg { width: 36%; height: 36%; }
+    .detail .close {
+      opacity: 1; transform: translate(-50%,-50%) scale(1); pointer-events: auto; visibility: visible;
+      transition-delay: .25s, .25s, 0s, 0s;
+    }
+    .panel { position: absolute; z-index: 301; left: calc(905 * var(--u)); top: calc(368 * var(--u)); width: calc(400 * var(--u)); pointer-events: none; }
+    .panel > * {
+      opacity: 0; transform: translateY(calc(18 * var(--u)));
+      transition: opacity .55s ease, transform .7s cubic-bezier(.22,1,.36,1);
+    }
+    .detail .panel { pointer-events: auto; }
+    .detail .panel > * { opacity: 1; transform: none; transition-delay: calc(var(--order) * .06s); }
+    .category { --order: 0; font-size: max(8px, calc(9.5 * var(--u))); color: var(--muted); }
+    .product-name { --order: 1; font-size: calc(34 * var(--u)); font-weight: 500; letter-spacing: -.025em; line-height: 1.1; margin: calc(12 * var(--u)) 0 calc(14 * var(--u)); }
+    .description { --order: 2; margin: 0; font-size: max(12px, calc(14 * var(--u))); line-height: 1.6; color: var(--muted); max-width: 30em; }
+    .swatches { --order: 3; display: flex; gap: calc(12 * var(--u)); margin: calc(26 * var(--u)) 0 calc(30 * var(--u)); }
+    .swatch { position: relative; width: max(18px, calc(24 * var(--u))); height: max(18px, calc(24 * var(--u))); border: 0; border-radius: 50%; background: var(--colour); }
+    .swatch::after {
+      content: ""; position: absolute; inset: calc(-5 * var(--u)); border: 1px solid var(--ink);
+      border-radius: 50%; opacity: 0; transform: scale(.8); transition: opacity .3s ease, transform .3s ease;
+    }
+    .swatch[aria-checked="true"]::after { opacity: .7; transform: scale(1); }
+    .swatch:hover::after { opacity: .4; transform: scale(1); }
+    .add { --order: 4; display: inline-block; border: 0; border-bottom: 1px solid var(--ink); padding-bottom: 4px; background: transparent; font-size: max(8px, calc(9.5 * var(--u))); }
+    .add:hover { border-bottom-color: transparent; }
+    .fly { position: fixed; z-index: 1000; pointer-events: none; transform-origin: center; filter: url(#clean) drop-shadow(0 10px 14px rgba(90,70,60,.18)); }
+    
+    @media (max-width: 820px) and (min-height: 521px) {
+      :root { --u: min(100vw / 600, 100vh / 1100); }
+      .tagline, .left-label, .right-label, .vertical-label, .menu { display: none; }
+      .logo { left: 20px; top: 22px; font-size: 24px; }
+      .nav { right: 20px; top: 18px; }
+      .stage { top: 45%; }
+      .ghost { top: calc(150 * var(--u)); font-size: calc(250 * var(--u)); }
+      .index { left: 20px; bottom: 26px; }
+      .index-window { font-size: 34px; }
+      .index-bar { height: 22px; margin: 0 12px; }
+      .scroll-hint { left: auto; right: 20px; bottom: 34px; transform: none; }
+      .scroll-hint span { display: none; }
+      .panel { left: calc(50% - 270 * var(--u)); top: calc(585 * var(--u)); width: calc(540 * var(--u)); }
+      .product-name { font-size: 24px; }
+      .description { font-size: 13px; line-height: 1.5; }
+      .category, .add { font-size: 9px; }
+      .swatches { gap: 12px; margin: 12px 0 14px; }
+    }
+    @media (max-width: 820px) and (max-height: 520px) {
+      :root { --n: calc(100vw / 1000); --u: min(100vw / 1440, 100vh / 900); }
+      .panel { left: calc(905 * var(--u)); top: calc(330 * var(--u)); width: calc(430 * var(--u)); }
+      .product-name { font-size: 20px; }
+      .description { font-size: 11px; }
+    }
+    @media (max-height: 520px) { .vertical-label { display: none; } }
+    @media (prefers-reduced-motion: reduce) {
+      .js .rv { opacity: 1; }
+      .panel > *, .index-number, .index-label, .dots, .dot, .shadow, .art, .art2, .swatch::after, .close { transition: none !important; }
+    }
+
+    /* Beyond Doubt: retain the original stage and orbit; use the supplied identity. */
+    body { color-scheme: light; }
+    ::selection { background: var(--ink); color: var(--bg); }
+    :focus-visible { outline: 2px solid var(--ink); outline-offset: 5px; }
+    .logo { width: clamp(155px, calc(220 * var(--n)), 280px); min-height: 44px; display: flex; align-items: center; top: calc(25 * var(--n)); }
+    .logo img { width: 100%; height: auto; filter: brightness(0); }
+    .tagline { top: calc(35 * var(--n)); letter-spacing: .2em; }
+    .nav { top: calc(25 * var(--n)); gap: 22px; }
+    .menu { border: 0; background: none; min-height: 44px; font-size: 10px; letter-spacing: .18em; }
+    .shop-link { min-height: 44px; display: flex; align-items: center; gap: 16px; border-bottom: 1px solid var(--ink); font-size: 10px; letter-spacing: .18em; transition: opacity .2s ease; }
+    .shop-link svg { width: 14px; height: 14px; }
+    .shop-link:hover { opacity: .6; }
+    .left-label { letter-spacing: .2em; }
+    .right-label { letter-spacing: .18em; }
+    .right-label span { display: block; color: var(--muted); font-size: 9px; margin-top: 4px; }
+    .vertical-label { letter-spacing: .25em; }
+    .ghost { top: calc(151 * var(--u)); padding: 0 calc(100 * var(--u)); line-height: 0; }
+    .ghost img { width: 100%; height: auto; filter: brightness(0); opacity: .055; }
+    .shadow { background: radial-gradient(ellipse, rgba(38,40,32,.14), rgba(38,40,32,.045) 55%, transparent 100%); }
+    .art, .art2 { background-size: contain; background-position: center; filter: drop-shadow(0 12px 10px rgba(24,26,20,.12)); }
+    .item { border: 0; background: transparent; }
+    .close { min-width: 44px; min-height: 44px; background: var(--bg); }
+    .panel { top: calc(300 * var(--u)); width: calc(400 * var(--u)); }
+    .product-name { --order: 0; font-size: calc(40 * var(--u)); font-weight: 600; margin: 0 0 calc(15 * var(--u)); text-wrap: balance; }
+    .category { --order: 1; letter-spacing: .18em; margin-bottom: 18px; }
+    .description { --order: 2; }
+    .view-switch { --order: 3; display: flex; gap: 6px; margin: 25px 0; width: fit-content; border-bottom: 1px solid var(--line); }
+    .view-button { min-height: 44px; padding: 0 17px; background: none; border: 0; border-bottom: 2px solid transparent; color: var(--muted); font-size: 10px; letter-spacing: .15em; text-transform: uppercase; transition: color .2s ease, border-color .2s ease; }
+    .view-button[aria-checked="true"] { color: var(--ink); border-bottom-color: var(--ink); }
+    .view-button:hover { color: var(--ink); }
+    .product-shops { --order: 4; display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+    .store-button { min-height: 44px; display: inline-flex; align-items: center; justify-content: center; gap: 15px; padding: 0 18px; background: var(--ink); color: var(--bg); border: 1px solid var(--ink); font-size: 10px; letter-spacing: .12em; transition: background .2s ease, color .2s ease; }
+    .store-button svg { width: 13px; height: 13px; }
+    .store-button:hover { background: var(--bg); color: var(--ink); }
+    .store-button.secondary { color: var(--ink); background: transparent; border-color: var(--line); }
+    .store-button.secondary:hover { border-color: var(--ink); }
+    .stock-note { --order: 5; color: var(--muted); font-size: 11px; line-height: 1.5; margin: 15px 0 0; }
+    .index-window { font-variant-numeric: tabular-nums; }
+    .index-labels { letter-spacing: .2em; }
+    .scroll-hint { gap: 12px; letter-spacing: .2em; }
+    .scroll-hint > svg { display: none; }
+    .explore-controls { right: calc(40 * var(--n)); bottom: calc(45 * var(--n)); display: flex; gap: 9px; }
+    .explore-controls .round { width: 44px; height: 44px; }
+    .explore-controls svg { width: 15px; height: 15px; }
+    .motion-toggle { border: 0; background: none; color: var(--muted); font-size: 9px; letter-spacing: .15em; padding: 0 12px; min-height: 44px; }
+    .detail .explore-controls, .detail .scroll-hint { opacity: 0; pointer-events: none; visibility: hidden; }
+    .skip-link { position: fixed; top: 10px; left: 10px; z-index: 1500; background: var(--ink); color: var(--bg); padding: 12px 18px; transform: translateY(-180%); }
+    .skip-link:focus { transform: none; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+    .business-drawer { position: fixed; inset: 0 0 0 auto; max-width: 530px; width: 100%; height: 100dvh; max-height: none; padding: 0; margin: 0; border: 0; background: var(--bg); color: var(--ink); box-shadow: -20px 0 80px rgba(30,32,25,.13); overflow-y: auto; scrollbar-color: var(--muted) var(--bg); scrollbar-width: thin; }
+    .business-drawer::backdrop { background: rgba(28,30,25,.3); }
+    .drawer-inner { padding: 35px 44px 50px; }
+    .drawer-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 45px; }
+    .drawer-head img { height: auto; width: 190px; filter: brightness(0); }
+    .drawer-close { width: 44px; height: 44px; }
+    .drawer-close svg { width: 15px; height: 15px; }
+    .business-drawer h2 { font-size: 34px; font-weight: 500; letter-spacing: -.03em; margin: 0 0 16px; }
+    .business-drawer p { color: var(--muted); font-size: 14px; line-height: 1.65; }
+    .verified { display: flex; align-items: center; gap: 8px; font-size: 12px; }
+    .verified svg { width: 17px; height: 17px; }
+    .business-drawer h3 { font-size: 12px; font-weight: 600; letter-spacing: .13em; text-transform: uppercase; margin: 34px 0 12px; }
+    .store-list { display: flex; flex-direction: column; }
+    .store-list a { display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--line); padding: 17px 0; min-height: 54px; font-size: 18px; transition: padding .2s ease; }
+    .store-list a:hover { padding-left: 8px; }
+    .store-list svg { width: 16px; height: 16px; }
+    .business-drawer address { font-size: 14px; line-height: 1.7; font-style: normal; color: var(--muted); }
+    .contact-link { display: inline-flex; align-items: center; min-height: 44px; border-bottom: 1px solid var(--ink); font-size: 13px; margin-top: 8px; }
+    .profile-note { border-top: 1px solid var(--line); margin-top: 30px; padding-top: 15px; }
+    .profile-note p { font-size: 11px; }
+    .asset-warning { position: absolute; z-index: 450; left: 50%; top: 90px; transform: translateX(-50%); padding: 12px 18px; background: var(--ink); color: var(--bg); font-size: 12px; max-width: 90%; text-align: center; }
+    @media (max-width: 820px) and (min-height: 521px) {
+      .logo { width: 160px; top: 17px; left: 20px; }
+      .nav { top: 17px; right: 20px; gap: 14px; }
+      .menu { display: block; font-size: 9px; }
+      .shop-link { font-size: 9px; gap: 8px; }
+      .shop-link svg { width: 11px; }
+      .stage { top: 43%; }
+      .ghost { top: calc(145 * var(--u)); padding: 0 calc(455 * var(--u)); }
+      .panel { left: calc(50% - 260 * var(--u)); top: calc(548 * var(--u)); width: calc(520 * var(--u)); }
+      .product-name { font-size: 28px; margin-bottom: 8px; }
+      .category { font-size: 9px; margin-bottom: 10px; }
+      .description { font-size: 12px; }
+      .view-switch { margin: 10px 0 13px; }
+      .stock-note { font-size: 10px; margin-top: 10px; }
+      .product-shops { gap: 8px; }
+      .store-button { font-size: 9px; padding: 0 14px; }
+      .index { bottom: 28px; }
+      .index-labels { min-width: 12em; font-size: 8px; }
+      .scroll-hint { bottom: 105px; right: auto; left: 50%; transform: translateX(-50%); }
+      .scroll-hint span { display: block; font-size: 8px; }
+      .explore-controls { right: 20px; bottom: 22px; gap: 5px; }
+      .motion-toggle { padding: 0 5px; font-size: 8px; }
+      .explore-controls .round { width: 44px; height: 44px; }
+      .drawer-inner { padding: 25px 25px 40px; }
+    }
+    @media (max-width: 380px) { .logo { width: 135px; } .nav { gap: 9px; } .motion-toggle { display: none; } }
+    @media (max-height: 520px) {
+      .tagline, .left-label, .right-label { display: none; }
+      .logo { width: 160px; top: 12px; left: 25px; }
+      .nav { top: 10px; right: 25px; }
+      .panel { left: calc(900 * var(--u)); top: calc(210 * var(--u)); width: calc(500 * var(--u)); }
+      .product-name { font-size: 23px; margin-bottom: 8px; }
+      .category { font-size: 9px; margin-bottom: 9px; }
+      .description { font-size: 11px; }
+      .view-switch { margin: 6px 0; }
+      .stock-note { font-size: 9px; margin-top: 7px; }
+      .index { bottom: 20px; }
+      .scroll-hint { bottom: 30px; }
+      .explore-controls { bottom: 15px; }
+    }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; } .business-drawer, .store-list a, .store-button, .view-button { transition: none; } }
+
+    .menu, .shop-link, .motion-toggle, .view-button, .store-button { font-size: 11px; letter-spacing: .12em; }
+    .caps, .index-labels, .index-kind, .right-label span, .category, .scroll-hint span { font-size: max(11px, calc(10.5 * var(--n))); }
+    .index-labels { min-width: 12em; letter-spacing: .13em; }
+    .stock-note { font-size: 12px; }
+    .profile-note p { font-size: 12px; }
+    .view-switch { border-bottom: 0; }
+    .view-button { border-bottom: 1px solid var(--line); }
+    .view-button[aria-checked="true"] { border-bottom-width: 2px; }
+    .index-number { transition-duration: .35s; }
+    @media (max-width: 820px) and (min-height: 521px) {
+      .index-labels { min-width: 0; max-width: 135px; }
+      .collection-label { max-width: 135px; }
+      .index-window { font-size: 30px; }
+      .index-bar { margin: 0 10px; }
+      .motion-toggle { display: block; position: fixed; right: 20px; bottom: 78px; padding: 0 12px; min-width: 66px; border: 1px solid var(--line); background: var(--bg); }
+      .detail .index { visibility: hidden; }
+      .stock-note { font-size: 12px; }
+      .scroll-hint { bottom: 155px; }
+      .scroll-hint span { font-size: 11px; letter-spacing: .13em; }
+      .tagline { display: block; top: 103px; width: 100%; font-size: 11px; }
+      .detail .tagline { visibility: hidden; }
+    }
+    @media (max-height: 520px) {
+      .panel { left: calc(865 * var(--u)); top: calc(172 * var(--u)); width: calc(690 * var(--u)); max-height: calc(100dvh - 92px); overflow-y: auto; scrollbar-width: thin; }
+      .product-name { font-size: 22px; }
+      .category { margin-bottom: 8px; font-size: 11px; letter-spacing: .1em; }
+      .view-switch { margin: 3px 0 6px; }
+      .view-button { min-height: 40px; padding: 0 12px; }
+      .store-button { padding: 0 10px; gap: 9px; font-size: 11px; }
+      .product-shops { gap: 8px; }
+      .stock-note { margin-top: 8px; font-size: 12px; }
+      .detail .index { visibility: hidden; }
+    }
+    @media (max-width: 350px) and (min-height: 521px) { .index-labels { max-width: 105px; } }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#collection">Skip to collection</a>
+  <main class="hero" aria-label="Beyond Doubt apparel collection">
+    <a class="logo chrome rv" href="index-beyond-doubt.html" aria-label="Beyond Doubt home"><img src="assets/beyond-doubt/wordmark.png" alt="Beyond Doubt" width="1480" height="282"></a>
+    <div class="tagline chrome caps rv">CHASE WHAT’S AHEAD.<br>BEYOND DOUBT.</div>
+    <nav class="nav chrome rv" aria-label="Main">
+      <button class="menu caps" type="button" aria-haspopup="dialog" aria-controls="business-drawer">ABOUT</button>
+      <a class="shop-link caps" href="https://shopee.ph/beyond.doubt" target="_blank" rel="noopener noreferrer">SHOP <svg viewBox="0 0 16 16" stroke-width="1.3" aria-hidden="true"><path d="M3 13 13 3M3 3h10v10"/></svg></a>
+    </nav>
+    <div class="left-label chrome caps rv">THE JERSEYS — 5 DESIGNS</div>
+    <div class="right-label chrome caps rv">BEYOND DOUBT<span>NORTH FAIRVIEW, QC</span></div>
+    <div class="vertical-label chrome caps rv">APPAREL &amp; CLOTHING · NORTH FAIRVIEW, QC</div>
+    <div class="stage" id="collection" role="region" aria-label="Interactive jersey collection" tabindex="-1" aria-describedby="collection-help">
+      <h1 class="sr-only">Beyond Doubt jersey collection</h1>
+      <div class="ghost rv" aria-hidden="true"><img src="assets/beyond-doubt/wordmark.png" alt="" width="1480" height="282"></div>
+      <div class="shadow rv" aria-hidden="true"></div>
+      <div class="dots rv" aria-hidden="true"><i class="dot active"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i></div>
+      <button class="close round" type="button" aria-label="Back to collection" tabindex="-1"><svg viewBox="0 0 16 16" stroke-width="1.3" aria-hidden="true"><path d="m4 4 8 8M12 4l-8 8"/></svg></button>
+      <section class="panel" aria-labelledby="product-name" aria-hidden="true" inert>
+        <h2 class="product-name" id="product-name"></h2>
+        <div class="category caps"></div>
+        <p class="description"></p>
+        <div class="view-switch" role="radiogroup" aria-label="Product view">
+          <button class="view-button" type="button" role="radio" aria-label="Front view" aria-checked="true">Front</button>
+          <button class="view-button" type="button" role="radio" aria-label="Back view" aria-checked="false" tabindex="-1">Back</button>
+        </div>
+        <div class="product-shops">
+          <a class="store-button" href="https://shopee.ph/beyond.doubt" target="_blank" rel="noopener noreferrer">SHOP SHOPEE <svg viewBox="0 0 16 16" stroke-width="1.3" aria-hidden="true"><path d="M3 13 13 3M3 3h10v10"/></svg></a>
+          <a class="store-button secondary" href="https://www.lazada.com.ph/shop/beyond-doubt" target="_blank" rel="noopener noreferrer">LAZADA <svg viewBox="0 0 16 16" stroke-width="1.3" aria-hidden="true"><path d="M3 13 13 3M3 3h10v10"/></svg></a>
+        </div>
+        <p class="stock-note">Check current prices, sizes &amp; availability in our shops.</p>
+      </section>
+    </div>
+    <div class="index chrome rv">
+      <div class="index-window"><span class="index-number">01</span></div>
+      <div class="index-bar" aria-hidden="true"></div>
+      <div class="index-labels caps">
+        <div class="index-label collection-label"><span class="index-kind">CHASE</span><br>JERSEY COLLECTION</div>
+        <div class="index-label choose-label">FRONT &amp; BACK<br>JERSEY DETAILS</div>
+      </div>
+    </div>
+    <div class="scroll-hint chrome caps rv"><span id="collection-help">DRAG OR SCROLL TO EXPLORE</span></div>
+    <div class="explore-controls chrome rv" aria-label="Collection controls">
+      <button class="motion-toggle" type="button" aria-label="Pause automatic rotation" aria-pressed="false">PAUSE</button>
+      <button class="previous round" type="button" aria-label="Previous jersey"><svg viewBox="0 0 16 16" stroke-width="1.3" aria-hidden="true"><path d="M13 8H3m5-5L3 8l5 5"/></svg></button>
+      <button class="next round" type="button" aria-label="Next jersey"><svg viewBox="0 0 16 16" stroke-width="1.3" aria-hidden="true"><path d="M3 8h10M8 3l5 5-5 5"/></svg></button>
+    </div>
+    <p class="asset-warning" role="status" hidden>Some product images could not load. Reload the page or browse the collection on Shopee.</p>
+    <p class="sr-only" id="collection-status" role="status" aria-live="polite"></p>
+  </main>
+  <dialog class="business-drawer" id="business-drawer" aria-labelledby="business-title">
+    <div class="drawer-inner">
+      <div class="drawer-head"><img src="assets/beyond-doubt/wordmark.png" alt="Beyond Doubt" width="1480" height="282"><button class="drawer-close round" type="button" aria-label="Close business information"><svg viewBox="0 0 16 16" stroke-width="1.3" aria-hidden="true"><path d="m4 4 8 8M12 4l-8 8"/></svg></button></div>
+      <h2 id="business-title">Beyond Doubt.</h2>
+      <p>Apparel &amp; clothing.<br>Find your next jersey. Chase what’s ahead.</p>
+      <div class="verified"><svg viewBox="0 0 20 20" stroke-width="1.4" aria-hidden="true"><path d="m10 1 2.2 2 3-.1.6 2.9L18 8l-1 2.8.4 3-2.7 1.2-1.5 2.5-2.9-.7-2.8 1-1.8-2.4-2.8-.9.1-3L1 9l1.9-2.3.3-3 3-.3Z"/><path d="m6 9.5 2.7 2.7 4.8-4.8"/></svg>Meta Verified on Facebook</div>
+      <p>90% recommend · 5 Facebook reviews</p>
+      <h3>Find us online</h3>
+      <div class="store-list">
+        <a href="https://shopee.ph/beyond.doubt" target="_blank" rel="noopener noreferrer">Shopee <svg viewBox="0 0 16 16" stroke-width="1.3" aria-hidden="true"><path d="M3 13 13 3M3 3h10v10"/></svg></a>
+        <a href="https://www.lazada.com.ph/shop/beyond-doubt" target="_blank" rel="noopener noreferrer">Lazada <svg viewBox="0 0 16 16" stroke-width="1.3" aria-hidden="true"><path d="M3 13 13 3M3 3h10v10"/></svg></a>
+        <a href="https://www.tiktok.com/@beyonddoubt.clothing" target="_blank" rel="noopener noreferrer">TikTok <svg viewBox="0 0 16 16" stroke-width="1.3" aria-hidden="true"><path d="M3 13 13 3M3 3h10v10"/></svg></a>
+      </div>
+      <h3>North Fairview, Quezon City</h3>
+      <address>Blk 27 Lot 12 Pechayan Kanan<br>Namasape HOA, Commonwealth Ave.<br>North Fairview QC, Quezon City<br>Philippines, 1121</address>
+      <a class="contact-link" href="https://www.google.com/maps/search/?api=1&amp;query=Blk%2027%20Lot%2012%20Pechayan%20Kanan%20Namasape%20HOA%20North%20Fairview%20Quezon%20City" target="_blank" rel="noopener noreferrer">View location on Google Maps</a>
+      <h3>Get in touch</h3>
+      <a class="contact-link" href="tel:+639055079634">0905 507 9634</a>
+      <p>Find “Beyond Doubt” on Messenger.<br>Call to confirm opening hours before visiting.</p>
+      <div class="profile-note"><p>Facebook profile created July 26, 2023.<br>Verification and recommendations are from the supplied Facebook profile information.</p></div>
+    </div>
+  </dialog>
+  <noscript><style>.hero {display:none} html,body {overflow:auto} .business-drawer {display:block; position:relative; height:auto; margin:auto; box-shadow:none} .drawer-close {display:none}</style><p style="padding:20px;text-align:center">Enable JavaScript to explore the interactive collection. Our shops and contact information are below.</p></noscript>
+  <script>
+    (() => {
+      'use strict';
+      const hero = document.querySelector('.hero');
+      const stage = document.querySelector('.stage');
+      const shadow = document.querySelector('.shadow');
+      const pagination = document.querySelector('.dots');
+      const dots = [...document.querySelectorAll('.dot')];
+      const close = document.querySelector('.close');
+      const panel = document.querySelector('.panel');
+      const title = document.querySelector('.product-name');
+      const category = document.querySelector('.category');
+      const description = document.querySelector('.description');
+      const swatches = [...document.querySelectorAll('.view-button')];
+      const number = document.querySelector('.index-number');
+      const kindLabel = document.querySelector('.index-kind');
+      const shopLinks = [...document.querySelectorAll('.product-shops a')];
+      const drawer = document.querySelector('.business-drawer');
+      const menu = document.querySelector('.menu');
+      const status = document.querySelector('#collection-status');
+      const motionToggle = document.querySelector('.motion-toggle');
+      const motion = matchMedia('(prefers-reduced-motion: reduce)');
+      const phone = matchMedia('(max-width: 820px) and (min-height: 521px)');
+      const colours = ['Front', 'Back'];
+      const products = [
+        { id: 'chase', kind: 'Chase', category: 'BLACK & WHITE · LONG-SLEEVE JERSEY', description: 'Checkerboard graphics with the Beyond Doubt wordmark. Turn it around for “Chase What’s Ahead.”' },
+        { id: 'electric', kind: 'Electric', category: 'CYAN & MAGENTA · LONG-SLEEVE JERSEY', description: 'A white base with bold cyan and magenta graphics. The front carries the wordmark; the back features the geometric BD emblem.' },
+        { id: 'wave', kind: 'Wave', category: 'BLACK & WHITE · LONG-SLEEVE JERSEY', description: 'Monochrome wave artwork across the sleeves and hem, with a larger circular graphic on the back.' },
+        { id: 'sunset', kind: 'Sunset', category: 'GRAY & ORANGE · LONG-SLEEVE JERSEY', description: 'A sunset graphic on gray, with warm color accents along the sleeves and a geometric emblem on the back.' },
+        { id: 'race', kind: 'Race', category: 'BLACK & WHITE · LONG-SLEEVE JERSEY', description: 'Checkerboard sleeve details and a bold front wordmark. The back pairs Beyond Doubt lettering with crossed racing flags.' }
+      ];
+      const CX = 718, CY = 418, R = 411, DROP = 110, S0 = .97, TILT = 9;
+      const N = products.length, STEP = 2 * Math.PI / N, OMEGA = STEP / 7;
+      const clamp = (v, lo = 0, hi = 1) => Math.min(hi, Math.max(lo, v));
+      const cubic = t => t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+      const mix = (a, b, t) => a + (b - a) * t;
+      const crop = (col, row) => `url("assets/beyond-doubt/${products[col].id}-${row === 0 ? 'front' : 'back'}.png")`;
+      let base = 0, unit = 1, selected = null, d = 0, blend = null;
+      let drag = null, fling = 0, autoWeight = 1, suppressClick = false;
+      let entryStart = Infinity, entered = false, lastTime = performance.now();
+      let indexTimer = 0, numberResetFrame = 0, displayedNumber = '01';
+      let hovered = null, paused = motion.matches, manualUntil = 0, navigation = null;
+      let pointer = { x: 0, y: 0 }, parallax = { x: 0, y: 0 };
+      let frontIndex = 0, previousFront = -1;
+      const revealAnimations = [];
+      const items = products.map((product, i) => {
+        const col = i, row = 0;
+        const el = document.createElement('button');
+        el.type = 'button'; el.className = 'item';
+        el.setAttribute('role', 'button');
+        el.setAttribute('tabindex', '0');
+        el.setAttribute('aria-label', `${colours[row]} ${products[col].kind}`);
+        el.setAttribute('aria-expanded', 'false');
+        const art = document.createElement('div');
+        const art2 = document.createElement('div');
+        art.className = 'art'; art2.className = 'art2';
+        art.style.backgroundImage = art2.style.backgroundImage = crop(col, row);
+        el.append(art, art2);
+        stage.insertBefore(el, close);
+        const item = { el, art, art2, col, row, i, swapTimer: 0, bounceStart: -Infinity, swapping: false };
+        el.addEventListener('pointerenter', event => {
+          if (event.pointerType === 'touch' || selected || drag?.moved) return;
+          hovered = item; setIndex(i + 1, products[col].kind);
+        });
+        el.addEventListener('pointerleave', () => {
+          if (hovered === item) hovered = null;
+          if (!selected) setIndex(frontIndex + 1, products[frontIndex].kind);
+        });
+        el.addEventListener('click', () => {
+          if (suppressClick || drag?.moved) return;
+          openItem(item);
+        });
+        el.addEventListener('keydown', event => {
+          if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault(); openItem(item);
+          }
+        });
+        return item;
+      });
+
+      function measure() {
+        unit = stage.getBoundingClientRect().width / 1440;
+        placeClose();
+      }
+      function target() { return phone.matches ? { x: 716, y: 290, scale: .79 } : { x: 470, y: 425, scale: 1.12 }; }
+      function pose(i) {
+        const theta = base + i * STEP, c = Math.cos(theta), s = Math.sin(theta), k = (1 + c) / 2;
+        return { x: CX + R * s, y: CY + (1 - k) * DROP, scale: S0 * (.72 + .28 * k), rotation: TILT * s, k, c };
+      }
+      function placeClose() {
+        const t = target();
+        close.style.left = `${(t.x + 205 * t.scale) * unit}px`;
+        close.style.top = `${(t.y - 200 * t.scale) * unit}px`;
+      }
+      function setIndex(value, kind) {
+        kindLabel.textContent = kind.toUpperCase();
+        const next = String(value).padStart(2, '0');
+        if (displayedNumber === next) return;
+        displayedNumber = next;
+        clearTimeout(indexTimer); cancelAnimationFrame(numberResetFrame);
+        if (motion.matches) { number.textContent = next; number.style.transform = 'none'; return; }
+        number.style.transition = '';
+        number.style.transform = 'translateY(-110%)';
+        indexTimer = setTimeout(() => {
+          number.style.transition = 'none'; number.textContent = next;
+          number.style.transform = 'translateY(110%)';
+          void number.offsetHeight;
+          numberResetFrame = requestAnimationFrame(() => {
+            number.style.transition = ''; number.style.transform = 'translateY(0)';
+          });
+        }, 300);
+      }
+      function updatePanel() {
+        if (!selected) return;
+        const product = products[selected.col];
+        title.textContent = `${product.kind} jersey`;
+        category.textContent = product.category; description.textContent = product.description;
+        selected.el.setAttribute('aria-label', `${title.textContent}, ${colours[selected.row].toLowerCase()} view`);
+        swatches.forEach((swatch, row) => {
+          const active = row === selected.row;
+          swatch.setAttribute('aria-checked', String(active)); swatch.tabIndex = active ? 0 : -1;
+        });
+      }
+      function animateDetail(to) {
+        blend = { from: d, to, start: performance.now(), duration: motion.matches ? 1 : 560 };
+      }
+      function openItem(item) {
+        if (selected || drag?.moved) return;
+        selected = item; hovered = null; drag = null; navigation = null;
+        stage.classList.remove('dragging');
+        hero.classList.add('detail');
+        items.forEach(other => { other.el.tabIndex = -1; });
+        item.el.setAttribute('aria-expanded', 'true');
+        document.querySelector('.explore-controls').inert = true; panel.inert = false; panel.setAttribute('aria-hidden', 'false'); close.tabIndex = 0;
+        updatePanel(); setIndex(item.i + 1, products[item.col].kind); placeClose();
+        animateDetail(1);
+        close.focus({ preventScroll: true });
+      }
+      function closeItem() {
+        if (!selected || blend?.to === 0) return;
+        hero.classList.remove('detail'); document.querySelector('.explore-controls').inert = false; panel.inert = true; panel.setAttribute('aria-hidden', 'true'); close.tabIndex = -1;
+        selected.el.setAttribute('aria-expanded', 'false');
+        selected.el.focus({ preventScroll: true });
+        setIndex(frontIndex + 1, products[frontIndex].kind); animateDetail(0);
+      }
+      close.addEventListener('click', closeItem);
+      menu.addEventListener('click', () => drawer.showModal());
+      document.querySelector('.drawer-close').addEventListener('click', () => drawer.close());
+      drawer.addEventListener('click', event => { if (event.target === drawer && event.clientX < drawer.getBoundingClientRect().left) drawer.close(); });
+      drawer.addEventListener('close', () => menu.focus({ preventScroll: true }));
+      function setPaused(value) {
+        paused = value; motionToggle.textContent = paused ? 'PLAY' : 'PAUSE';
+        motionToggle.setAttribute('aria-label', paused ? 'Play automatic rotation' : 'Pause automatic rotation');
+        motionToggle.setAttribute('aria-pressed', String(paused));
+      }
+      setPaused(paused);
+      motionToggle.addEventListener('click', () => setPaused(!paused));
+      function step(direction) {
+        if (selected || drawer.open || drag) return;
+        const index = (frontIndex + direction + N) % N;
+        const turns = Math.round((base + index * STEP) / (2 * Math.PI));
+        const destination = -index * STEP + turns * 2 * Math.PI;
+        navigation = { from: base, to: destination, start: performance.now() };
+        fling = 0; manualUntil = performance.now() + 5500;
+        status.textContent = `${index + 1} of ${N}: ${products[index].kind} jersey`;
+      }
+      document.querySelector('.previous').addEventListener('click', () => step(-1));
+      document.querySelector('.next').addEventListener('click', () => step(1));
+      hero.addEventListener('wheel', event => {
+        if (selected || drawer.open) return;
+        event.preventDefault(); navigation = null;
+        base -= clamp(event.deltaY + event.deltaX, -100, 100) * .002;
+        manualUntil = performance.now() + 4000;
+      }, { passive: false });
+      hero.addEventListener('pointermove', event => {
+        if (event.pointerType === 'touch' || motion.matches) return;
+        pointer = { x: (event.clientX / innerWidth - .5) * 2, y: (event.clientY / innerHeight - .5) * 2 };
+      });
+      hero.addEventListener('pointerleave', () => { pointer = { x: 0, y: 0 }; });
+      window.addEventListener('keydown', event => {
+        if (drawer.open) return;
+        if (event.key === 'Escape') closeItem();
+        if (!selected && (event.key === 'ArrowLeft' || event.key === 'ArrowRight')) { event.preventDefault(); step(event.key === 'ArrowLeft' ? -1 : 1); }
+        if (event.key === 'Tab' && selected && hero.classList.contains('detail')) {
+          const stops = [close, ...swatches.filter(s => s.tabIndex === 0), ...shopLinks];
+          if (event.shiftKey && document.activeElement === stops[0]) { event.preventDefault(); stops.at(-1).focus(); }
+          else if (!event.shiftKey && document.activeElement === stops.at(-1)) { event.preventDefault(); stops[0].focus(); }
+        }
+      });
+
+      function swapColour(row) {
+        if (!selected || row === selected.row) return;
+        const item = selected;
+        clearTimeout(item.swapTimer);
+        if (item.swapping) {
+          item.art.style.backgroundImage = crop(item.col, item.row);
+          item.el.classList.remove('swap');
+        }
+        item.row = row; updatePanel();
+        if (motion.matches) {
+          item.art.style.backgroundImage = crop(item.col, row); item.swapping = false;
+          return;
+        }
+        item.art2.style.backgroundImage = crop(item.col, row);
+        void item.art2.offsetWidth;
+        item.el.classList.add('swap'); item.swapping = true;
+        item.swapTimer = setTimeout(() => {
+          item.art.style.backgroundImage = crop(item.col, row);
+          item.el.classList.remove('swap'); item.swapping = false; item.bounceStart = performance.now();
+        }, 360);
+      }
+      swatches.forEach((swatch, row) => {
+        swatch.addEventListener('click', () => swapColour(row));
+        swatch.addEventListener('keydown', event => {
+          let next = row;
+          if (event.key === 'ArrowRight' || event.key === 'ArrowDown') next = (row + 1) % 2;
+          else if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') next = (row + 1) % 2;
+          else if (event.key === 'Home') next = 0;
+          else if (event.key === 'End') next = 1;
+          else return;
+          event.preventDefault(); swapColour(next); swatches[next].focus();
+        });
+      });
+
+      stage.addEventListener('pointerdown', event => {
+        if (event.target.closest('.panel, .close') || selected || (event.pointerType === 'mouse' && event.button !== 0)) return;
+        drag = { id: event.pointerId, x: event.clientX, time: event.timeStamp, distance: 0, v: 0, moved: false };
+        suppressClick = false; navigation = null;
+      });
+      window.addEventListener('pointermove', event => {
+        if (!drag || drag.id !== event.pointerId || selected) return;
+        const dx = (event.clientX - drag.x) / unit;
+        const elapsed = Math.max(1, event.timeStamp - drag.time);
+        const delta = dx / R;
+        base += delta;
+        drag.v = .6 * drag.v + .4 * delta * (16.7 / elapsed);
+        drag.distance += Math.abs(dx); drag.x = event.clientX; drag.time = event.timeStamp;
+        if (!drag.moved && drag.distance > 6) {
+          drag.moved = true; suppressClick = true;
+          stage.classList.add('dragging'); stage.setPointerCapture(event.pointerId);
+          hovered = null; setIndex(frontIndex + 1, products[frontIndex].kind);
+        }
+      });
+      function release(event) {
+        if (!drag || drag.id !== event.pointerId) return;
+        const wasDrag = drag.moved;
+        if (wasDrag) {
+          fling = clamp(drag.v, -.12, .12); autoWeight = 0; suppressClick = true;
+        }
+        drag = null; stage.classList.remove('dragging');
+        if (wasDrag) setTimeout(() => { suppressClick = false; }, 0);
+        if (stage.hasPointerCapture(event.pointerId)) stage.releasePointerCapture(event.pointerId);
+      }
+      window.addEventListener('pointerup', release);
+      window.addEventListener('pointercancel', release);
+
+      function render(now) {
+        const dt = Math.min(.05, Math.max(0, (now - lastTime) / 1000)); lastTime = now;
+        if (!document.hidden) {
+          if (entered && !selected && !drag && !drawer.open) {
+            if (navigation) {
+              const progress = motion.matches ? 1 : clamp((now-navigation.start)/650);
+              base = mix(navigation.from, navigation.to, cubic(progress));
+              if (progress === 1) navigation = null;
+            }
+            if (!motion.matches && !paused && !hovered && !navigation && now > manualUntil && !stage.contains(document.activeElement)) base += OMEGA * dt * autoWeight;
+            if (Math.abs(fling) >= .0005) { base += fling; fling *= Math.pow(.92, dt * 60); } else fling = 0;
+            autoWeight = Math.min(1, autoWeight + .8 * dt);
+            if (Math.abs(base) > 2 * Math.PI) base %= 2 * Math.PI;
+          }
+          if (blend) {
+            const progress = clamp((now - blend.start) / blend.duration);
+            d = mix(blend.from, blend.to, cubic(progress));
+            if (progress === 1) {
+              d = blend.to; blend = null;
+              if (d === 0) { selected = null; items.forEach(item => { item.el.tabIndex = 0; }); }
+            }
+          }
+          const entry = motion.matches ? 1 : clamp((now - entryStart) / 1600);
+          const t = target(), chosenPose = selected ? pose(selected.i) : null;
+          parallax.x = mix(parallax.x, motion.matches ? 0 : pointer.x, Math.min(1, dt * 5));
+          parallax.y = mix(parallax.y, motion.matches ? 0 : pointer.y, Math.min(1, dt * 5));
+          document.querySelector('.ghost').style.transform = `translate(${-parallax.x * 13}px, ${-parallax.y * 9}px)`;
+          let front = 0, best = -Infinity;
+          items.forEach(item => {
+            const p = pose(item.i);
+            if (p.c > best) { best = p.c; front = item.i; }
+            const progress = clamp((entry * 1600 - (1 - p.c) * 260) / 1000);
+            const reveal = motion.matches ? 1 : 1 - Math.pow(1 - progress, 3);
+            let x = p.x, y = p.y, scale = p.scale, rotation = p.rotation, opacity = reveal;
+            if (item === selected) {
+              x = mix(x, t.x, d); y = mix(y, t.y, d); scale = mix(scale, t.scale, d); rotation *= 1 - d;
+            } else if (selected) {
+              x += (p.x >= chosenPose.x ? 1 : -1) * 240 * d;
+              scale *= 1 - .45 * d; opacity *= Math.max(0, 1 - 1.4 * d);
+            }
+            x += parallax.x * (10 + p.k * 9) * (1-d); y += parallax.y * (6 + p.k * 6) * (1-d);
+            y += (1 - reveal) * 36; scale *= .95 + .05 * reveal;
+            const bounce = clamp((now - item.bounceStart) / 420);
+            if (!motion.matches) scale *= 1 + .035 * Math.sin(Math.PI * bounce);
+            item.el.style.transform = `translate(${x * unit}px, ${y * unit}px) scale(${scale}) rotate(${rotation}deg)`;
+            item.el.style.opacity = opacity;
+            item.el.style.zIndex = item === selected ? 300 : Math.round(p.k * 100) + 1;
+            item.el.style.pointerEvents = (selected && item !== selected) || reveal === 0 ? 'none' : '';
+          });
+          frontIndex = front;
+          if (front !== previousFront && !hovered && !selected) { setIndex(front + 1, products[front].kind); previousFront = front; }
+          dots.forEach((dot, i) => dot.classList.toggle('active', i === front % 5));
+          pagination.style.opacity = 1 - d;
+          shadow.style.transform = `translate(${(t.x - CX) * .82 * d * unit}px, ${((t.y - CY) - (phone.matches ? 60 : 0)) * d * unit}px) scaleX(${1 - .45 * d})`;
+        }
+        requestAnimationFrame(render);
+      }
+      function entrance() {
+        if (entered) return;
+        entered = true;
+        entryStart = motion.matches ? -Infinity : performance.now() + 300;
+        const order = ['.logo', '.tagline', '.nav', '.left-label', '.right-label', '.vertical-label', '.ghost', '.shadow', '.dots', '.index', '.scroll-hint', '.explore-controls'];
+        order.forEach((selector, i) => {
+          const el = document.querySelector(selector);
+          if (motion.matches) { el.classList.remove('rv'); return; }
+          const computed = getComputedStyle(el);
+          const rest = computed.transform === 'none' ? '' : computed.transform;
+          const ghost = el.classList.contains('ghost');
+          const animation = el.animate([
+            { opacity: 0, transform: `translateY(${ghost ? 40 : 14}px) ${rest}` },
+            { opacity: 1, transform: rest || 'none' }
+          ], { duration: ghost ? 1400 : 1000, delay: ghost ? 150 : 80 + 60 * i, easing: 'cubic-bezier(.22,1,.36,1)', fill: 'both' });
+          revealAnimations.push({ el, animation });
+          animation.finished.then(() => { el.classList.remove('rv'); animation.cancel(); }).catch(() => {});
+        });
+      }
+      window.addEventListener('resize', measure);
+      document.addEventListener('visibilitychange', () => { lastTime = performance.now(); });
+      motion.addEventListener('change', () => {
+        if (!motion.matches) return;
+        setPaused(true); navigation = null;
+        revealAnimations.forEach(({ el, animation }) => { el.classList.remove('rv'); animation.cancel(); });
+        entryStart = -Infinity;
+        items.forEach(item => {
+          clearTimeout(item.swapTimer); item.el.classList.remove('swap'); item.swapping = false;
+          item.art.style.backgroundImage = crop(item.col, item.row);
+        });
+        if (blend) blend.duration = 1;
+      });
+      measure(); requestAnimationFrame(render);
+      const preloads = products.flatMap((product, col) => [0, 1].map(row => new Promise(resolve => {
+        const image = new Image(); image.onload = resolve;
+        image.onerror = () => { document.querySelector('.asset-warning').hidden = false; resolve(); };
+        image.src = `assets/beyond-doubt/${product.id}-${row === 0 ? 'front' : 'back'}.png`;
+      })));
+      Promise.all(preloads).then(entrance);
+      setTimeout(entrance, 2500);
+    })();
+  </script>
+</body>
+</html>

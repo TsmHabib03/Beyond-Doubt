@@ -1,0 +1,184 @@
+{
+  "wave-front.png": {
+    "source": "885150895_1811498543086760_5402289809886314320_n.jpg",
+    "alpha_guide": "885150895_1811498543086760_5402289809886314320_n-removebg-preview.png",
+    "source_dimensions": [
+      2000,
+      2000
+    ],
+    "native_cutout_dimensions": [
+      803,
+      771
+    ],
+    "output_dimensions": [
+      1000,
+      1000
+    ],
+    "operation": "extract front from full-resolution original, refine preview alpha guide against original edges, normalize 1000px canvas, mild output sharpening"
+  },
+  "wave-back.png": {
+    "source": "885150895_1811498543086760_5402289809886314320_n.jpg",
+    "alpha_guide": "885150895_1811498543086760_5402289809886314320_n-removebg-preview.png",
+    "source_dimensions": [
+      2000,
+      2000
+    ],
+    "native_cutout_dimensions": [
+      809,
+      768
+    ],
+    "output_dimensions": [
+      1000,
+      1000
+    ],
+    "operation": "extract back from full-resolution original, refine preview alpha guide against original edges, normalize 1000px canvas, mild output sharpening"
+  },
+  "sunset-front.png": {
+    "source": "885359889_985341477384161_6781199192129791877_n.jpg",
+    "alpha_guide": "885359889_985341477384161_6781199192129791877_n-removebg-preview.png",
+    "source_dimensions": [
+      2000,
+      2000
+    ],
+    "native_cutout_dimensions": [
+      810,
+      770
+    ],
+    "output_dimensions": [
+      1000,
+      1000
+    ],
+    "operation": "extract front from full-resolution original, refine preview alpha guide against original edges, normalize 1000px canvas, mild output sharpening"
+  },
+  "sunset-back.png": {
+    "source": "885359889_985341477384161_6781199192129791877_n.jpg",
+    "alpha_guide": "885359889_985341477384161_6781199192129791877_n-removebg-preview.png",
+    "source_dimensions": [
+      2000,
+      2000
+    ],
+    "native_cutout_dimensions": [
+      815,
+      775
+    ],
+    "output_dimensions": [
+      1000,
+      1000
+    ],
+    "operation": "extract back from full-resolution original, refine preview alpha guide against original edges, normalize 1000px canvas, mild output sharpening"
+  },
+  "chase-front.png": {
+    "source": "887578877_1066799613081901_5662893024735941349_n.jpg",
+    "alpha_guide": "887578877_1066799613081901_5662893024735941349_n-removebg-preview.png",
+    "source_dimensions": [
+      2001,
+      2001
+    ],
+    "native_cutout_dimensions": [
+      771,
+      814
+    ],
+    "output_dimensions": [
+      1000,
+      1000
+    ],
+    "operation": "extract front from full-resolution original, refine preview alpha guide against original edges, normalize 1000px canvas, mild output sharpening"
+  },
+  "chase-back.png": {
+    "source": "887578877_1066799613081901_5662893024735941349_n.jpg",
+    "alpha_guide": "887578877_1066799613081901_5662893024735941349_n-removebg-preview.png",
+    "source_dimensions": [
+      2001,
+      2001
+    ],
+    "native_cutout_dimensions": [
+      772,
+      812
+    ],
+    "output_dimensions": [
+      1000,
+      1000
+    ],
+    "operation": "extract back from full-resolution original, refine preview alpha guide against original edges, normalize 1000px canvas, mild output sharpening"
+  },
+  "electric-front.png": {
+    "source": "884529948_1434153752242046_980529619281778697_n.jpg",
+    "alpha_guide": "884529948_1434153752242046_980529619281778697_n-removebg-preview.png",
+    "source_dimensions": [
+      2000,
+      2000
+    ],
+    "native_cutout_dimensions": [
+      806,
+      773
+    ],
+    "output_dimensions": [
+      1000,
+      1000
+    ],
+    "operation": "extract front from full-resolution original, refine preview alpha guide against original edges, normalize 1000px canvas, mild output sharpening"
+  },
+  "electric-back.png": {
+    "source": "884529948_1434153752242046_980529619281778697_n.jpg",
+    "alpha_guide": "884529948_1434153752242046_980529619281778697_n-removebg-preview.png",
+    "source_dimensions": [
+      2000,
+      2000
+    ],
+    "native_cutout_dimensions": [
+      811,
+      771
+    ],
+    "output_dimensions": [
+      1000,
+      1000
+    ],
+    "operation": "extract back from full-resolution original, refine preview alpha guide against original edges, normalize 1000px canvas, mild output sharpening"
+  },
+  "race-front.png": {
+    "source": "881185482_1804739770727460_6043172799559884311_n.jpg",
+    "alpha_guide": "881185482_1804739770727460_6043172799559884311_n-removebg-preview.png",
+    "source_dimensions": [
+      2000,
+      2000
+    ],
+    "native_cutout_dimensions": [
+      808,
+      774
+    ],
+    "output_dimensions": [
+      1000,
+      1000
+    ],
+    "operation": "extract front from full-resolution original, refine preview alpha guide against original edges, normalize 1000px canvas, mild output sharpening"
+  },
+  "race-back.png": {
+    "source": "881185482_1804739770727460_6043172799559884311_n.jpg",
+    "alpha_guide": "881185482_1804739770727460_6043172799559884311_n-removebg-preview.png",
+    "source_dimensions": [
+      2000,
+      2000
+    ],
+    "native_cutout_dimensions": [
+      808,
+      765
+    ],
+    "output_dimensions": [
+      1000,
+      1000
+    ],
+    "operation": "extract back from full-resolution original, refine preview alpha guide against original edges, normalize 1000px canvas, mild output sharpening"
+  },
+  "wordmark.png": {
+    "source": "Beyond-Doubt.jpg",
+    "operation": "trim background, white wordmark alpha"
+  },
+  "favicon.png": {
+    "source": "Beyond-Doubt.jpg",
+    "operation": "wordmark favicon"
+  },
+  "duplicate": {
+    "source": "887578877_1066799613081901_5662893024735941349_n-removebg-preview (1).png",
+    "duplicate_of": "887578877_1066799613081901_5662893024735941349_n-removebg-preview.png"
+  }
+}

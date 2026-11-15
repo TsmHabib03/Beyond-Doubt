@@ -1,0 +1,540 @@
+[
+  {
+    "name": "desktop",
+    "width": 1440,
+    "height": 900,
+    "errors": [],
+    "images": [
+      {
+        "src": "file:///C:/Users/Habib/Kids-Store/assets/beyond-doubt/chase-front.png",
+        "loaded": true,
+        "width": 1000,
+        "height": 1000
+      },
+      {
+        "src": "file:///C:/Users/Habib/Kids-Store/assets/beyond-doubt/chase-back.png",
+        "loaded": true,
+        "width": 1000,
+        "height": 1000
+      },
+      {
+        "src": "file:///C:/Users/Habib/Kids-Store/assets/beyond-doubt/electric-front.png",
+        "loaded": true,
+        "width": 1000,
+        "height": 1000
+      },
+      {
+        "src": "file:///C:/Users/Habib/Kids-Store/assets/beyond-doubt/electric-back.png",
+        "loaded": true,
+        "width": 1000,
+        "height": 1000
+      },
+      {
+        "src": "file:///C:/Users/Habib/Kids-Store/assets/beyond-doubt/wave-front.png",
+        "loaded": true,
+        "width": 1000,
+        "height": 1000
+      },
+      {
+        "src": "file:///C:/Users/Habib/Kids-Store/assets/beyond-doubt/wave-back.png",
+        "loaded": true,
+        "width": 1000,
+        "height": 1000
+      },
+      {
+        "src": "file:///C:/Users/Habib/Kids-Store/assets/beyond-doubt/sunset-front.png",
+        "loaded": true,
+        "width": 1000,
+        "height": 1000
+      },
+      {
+        "src": "file:///C:/Users/Habib/Kids-Store/assets/beyond-doubt/sunset-back.png",
+        "loaded": true,
+        "width": 1000,
+        "height": 1000
+      },
+      {
+        "src": "file:///C:/Users/Habib/Kids-Store/assets/beyond-doubt/race-front.png",
+        "loaded": true,
+        "width": 1000,
+        "height": 1000
+      },
+      {
+        "src": "file:///C:/Users/Habib/Kids-Store/assets/beyond-doubt/race-back.png",
+        "loaded": true,
+        "width": 1000,
+        "height": 1000
+      }
+    ],
+    "advanced": "ELECTRIC",
+    "opened": true,
+    "back": true,
+    "drawerOpen": true,
+    "drawerClosed": true,
+    "overflow": false,
+    "detailBounds": {
+      "x": 905,
+      "y": 300,
+      "right": 1305,
+      "bottom": 610.59375,
+      "width": 400
+    },
+    "motionControl": {
+      "visible": true,
+      "x": 1237.21875,
+      "y": 811,
+      "right": 1294,
+      "bottom": 855
+    },
+    "links": [
+      {
+        "text": "Skip to collection",
+        "href": "#collection"
+      },
+      {
+        "text": "Beyond Doubt home",
+        "href": "index-beyond-doubt.html"
+      },
+      {
+        "text": "SHOP",
+        "href": "https://shopee.ph/beyond.doubt"
+      },
+      {
+        "text": "SHOP SHOPEE",
+        "href": "https://shopee.ph/beyond.doubt"
+      },
+      {
+        "text": "LAZADA",
+        "href": "https://www.lazada.com.ph/shop/beyond-doubt"
+      },
+      {
+        "text": "Shopee",
+        "href": "https://shopee.ph/beyond.doubt"
+      },
+      {
+        "text": "Lazada",
+        "href": "https://www.lazada.com.ph/shop/beyond-doubt"
+      },
+      {
+        "text": "TikTok",
+        "href": "https://www.tiktok.com/@beyonddoubt.clothing"
+      },
+      {
+        "text": "View location on Google Maps",
+        "href": "https://www.google.com/maps/search/?api=1&query=Blk%2027%20Lot%2012%20Pechayan%20Kanan%20Namasape%20HOA%20North%20Fairview%20Quezon%20City"
+      },
+      {
+        "text": "0905 507 9634",
+        "href": "tel:+639055079634"
+      }
+    ]
+  },
+  {
+    "name": "mobile",
+    "width": 390,
+    "height": 844,
+    "errors": [],
+    "images": [
+      {
+        "src": "file:///C:/Users/Habib/Kids-Store/assets/beyond-doubt/chase-front.png",
+        "loaded": true,
+        "width": 1000,
+        "height": 1000
+      },
+      {
+        "src": "file:///C:/Users/Habib/Kids-Store/assets/beyond-doubt/chase-back.png",
+        "loaded": true,
+        "width": 1000,
+        "height": 1000
+      },
+      {
+        "src": "file:///C:/Users/Habib/Kids-Store/assets/beyond-doubt/electric-front.png",
+        "loaded": true,
+        "width": 1000,
+        "height": 1000
+      },
+      {
+        "src": "file:///C:/Users/Habib/Kids-Store/assets/beyond-doubt/electric-back.png",
+        "loaded": true,
+        "width": 1000,
+        "height": 1000
+      },
+      {
+        "src": "file:///C:/Users/Habib/Kids-Store/assets/beyond-doubt/wave-front.png",
+        "loaded": true,
+        "width": 1000,
+        "height": 1000
+      },
+      {
+        "src": "file:///C:/Users/Habib/Kids-Store/assets/beyond-doubt/wave-back.png",
+        "loaded": true,
+        "width": 1000,
+        "height": 1000
+      },
+      {
+        "src": "file:///C:/Users/Habib/Kids-Store/assets/beyond-doubt/sunset-front.png",
+        "loaded": true,
+        "width": 1000,
+        "height": 1000
+      },
+      {
+        "src": "file:///C:/Users/Habib/Kids-Store/assets/beyond-doubt/sunset-back.png",
+        "loaded": true,
+        "width": 1000,
+        "height": 1000
+      },
+      {
+        "src": "file:///C:/Users/Habib/Kids-Store/assets/beyond-doubt/race-front.png",
+        "loaded": true,
+        "width": 1000,
+        "height": 1000
+      },
+      {
+        "src": "file:///C:/Users/Habib/Kids-Store/assets/beyond-doubt/race-back.png",
+        "loaded": true,
+        "width": 1000,
+        "height": 1000
+      }
+    ],
+    "advanced": "ELECTRIC",
+    "opened": true,
+    "back": true,
+    "drawerOpen": true,
+    "drawerClosed": true,
+    "overflow": false,
+    "detailBounds": {
+      "x": 26,
+      "y": 426.59375,
+      "right": 364,
+      "bottom": 686.203125,
+      "width": 338
+    },
+    "motionControl": {
+      "visible": true,
+      "x": 304,
+      "y": 722,
+      "right": 370,
+      "bottom": 766
+    },
+    "links": [
+      {
+        "text": "Skip to collection",
+        "href": "#collection"
+      },
+      {
+        "text": "Beyond Doubt home",
+        "href": "index-beyond-doubt.html"
+      },
+      {
+        "text": "SHOP",
+        "href": "https://shopee.ph/beyond.doubt"
+      },
+      {
+        "text": "SHOP SHOPEE",
+        "href": "https://shopee.ph/beyond.doubt"
+      },
+      {
+        "text": "LAZADA",
+        "href": "https://www.lazada.com.ph/shop/beyond-doubt"
+      },
+      {
+        "text": "Shopee",
+        "href": "https://shopee.ph/beyond.doubt"
+      },
+      {
+        "text": "Lazada",
+        "href": "https://www.lazada.com.ph/shop/beyond-doubt"
+      },
+      {
+        "text": "TikTok",
+        "href": "https://www.tiktok.com/@beyonddoubt.clothing"
+      },
+      {
+        "text": "View location on Google Maps",
+        "href": "https://www.google.com/maps/search/?api=1&query=Blk%2027%20Lot%2012%20Pechayan%20Kanan%20Namasape%20HOA%20North%20Fairview%20Quezon%20City"
+      },
+      {
+        "text": "0905 507 9634",
+        "href": "tel:+639055079634"
+      }
+    ]
+  },
+  {
+    "name": "small-mobile",
+    "width": 360,
+    "height": 640,
+    "errors": [],
+    "images": [
+      {
+        "src": "file:///C:/Users/Habib/Kids-Store/assets/beyond-doubt/chase-front.png",
+        "loaded": true,
+        "width": 1000,
+        "height": 1000
+      },
+      {
+        "src": "file:///C:/Users/Habib/Kids-Store/assets/beyond-doubt/chase-back.png",
+        "loaded": true,
+        "width": 1000,
+        "height": 1000
+      },
+      {
+        "src": "file:///C:/Users/Habib/Kids-Store/assets/beyond-doubt/electric-front.png",
+        "loaded": true,
+        "width": 1000,
+        "height": 1000
+      },
+      {
+        "src": "file:///C:/Users/Habib/Kids-Store/assets/beyond-doubt/electric-back.png",
+        "loaded": true,
+        "width": 1000,
+        "height": 1000
+      },
+      {
+        "src": "file:///C:/Users/Habib/Kids-Store/assets/beyond-doubt/wave-front.png",
+        "loaded": true,
+        "width": 1000,
+        "height": 1000
+      },
+      {
+        "src": "file:///C:/Users/Habib/Kids-Store/assets/beyond-doubt/wave-back.png",
+        "loaded": true,
+        "width": 1000,
+        "height": 1000
+      },
+      {
+        "src": "file:///C:/Users/Habib/Kids-Store/assets/beyond-doubt/sunset-front.png",
+        "loaded": true,
+        "width": 1000,
+        "height": 1000
+      },
+      {
+        "src": "file:///C:/Users/Habib/Kids-Store/assets/beyond-doubt/sunset-back.png",
+        "loaded": true,
+        "width": 1000,
+        "height": 1000
+      },
+      {
+        "src": "file:///C:/Users/Habib/Kids-Store/assets/beyond-doubt/race-front.png",
+        "loaded": true,
+        "width": 1000,
+        "height": 1000
+      },
+      {
+        "src": "file:///C:/Users/Habib/Kids-Store/assets/beyond-doubt/race-back.png",
+        "loaded": true,
+        "width": 1000,
+        "height": 1000
+      }
+    ],
+    "advanced": "ELECTRIC",
+    "opened": true,
+    "back": true,
+    "drawerOpen": true,
+    "drawerClosed": true,
+    "overflow": false,
+    "detailBounds": {
+      "x": 28.71875,
+      "y": 332.203125,
+      "right": 331.25,
+      "bottom": 609.8125,
+      "width": 302.53125
+    },
+    "motionControl": {
+      "visible": true,
+      "x": 274,
+      "y": 518,
+      "right": 340,
+      "bottom": 562
+    },
+    "links": [
+      {
+        "text": "Skip to collection",
+        "href": "#collection"
+      },
+      {
+        "text": "Beyond Doubt home",
+        "href": "index-beyond-doubt.html"
+      },
+      {
+        "text": "SHOP",
+        "href": "https://shopee.ph/beyond.doubt"
+      },
+      {
+        "text": "SHOP SHOPEE",
+        "href": "https://shopee.ph/beyond.doubt"
+      },
+      {
+        "text": "LAZADA",
+        "href": "https://www.lazada.com.ph/shop/beyond-doubt"
+      },
+      {
+        "text": "Shopee",
+        "href": "https://shopee.ph/beyond.doubt"
+      },
+      {
+        "text": "Lazada",
+        "href": "https://www.lazada.com.ph/shop/beyond-doubt"
+      },
+      {
+        "text": "TikTok",
+        "href": "https://www.tiktok.com/@beyonddoubt.clothing"
+      },
+      {
+        "text": "View location on Google Maps",
+        "href": "https://www.google.com/maps/search/?api=1&query=Blk%2027%20Lot%2012%20Pechayan%20Kanan%20Namasape%20HOA%20North%20Fairview%20Quezon%20City"
+      },
+      {
+        "text": "0905 507 9634",
+        "href": "tel:+639055079634"
+      }
+    ]
+  },
+  {
+    "name": "landscape",
+    "width": 844,
+    "height": 390,
+    "errors": [],
+    "images": [
+      {
+        "src": "file:///C:/Users/Habib/Kids-Store/assets/beyond-doubt/chase-front.png",
+        "loaded": true,
+        "width": 1000,
+        "height": 1000
+      },
+      {
+        "src": "file:///C:/Users/Habib/Kids-Store/assets/beyond-doubt/chase-back.png",
+        "loaded": true,
+        "width": 1000,
+        "height": 1000
+      },
+      {
+        "src": "file:///C:/Users/Habib/Kids-Store/assets/beyond-doubt/electric-front.png",
+        "loaded": true,
+        "width": 1000,
+        "height": 1000
+      },
+      {
+        "src": "file:///C:/Users/Habib/Kids-Store/assets/beyond-doubt/electric-back.png",
+        "loaded": true,
+        "width": 1000,
+        "height": 1000
+      },
+      {
+        "src": "file:///C:/Users/Habib/Kids-Store/assets/beyond-doubt/wave-front.png",
+        "loaded": true,
+        "width": 1000,
+        "height": 1000
+      },
+      {
+        "src": "file:///C:/Users/Habib/Kids-Store/assets/beyond-doubt/wave-back.png",
+        "loaded": true,
+        "width": 1000,
+        "height": 1000
+      },
+      {
+        "src": "file:///C:/Users/Habib/Kids-Store/assets/beyond-doubt/sunset-front.png",
+        "loaded": true,
+        "width": 1000,
+        "height": 1000
+      },
+      {
+        "src": "file:///C:/Users/Habib/Kids-Store/assets/beyond-doubt/sunset-back.png",
+        "loaded": true,
+        "width": 1000,
+        "height": 1000
+      },
+      {
+        "src": "file:///C:/Users/Habib/Kids-Store/assets/beyond-doubt/race-front.png",
+        "loaded": true,
+        "width": 1000,
+        "height": 1000
+      },
+      {
+        "src": "file:///C:/Users/Habib/Kids-Store/assets/beyond-doubt/race-back.png",
+        "loaded": true,
+        "width": 1000,
+        "height": 1000
+      }
+    ],
+    "advanced": "ELECTRIC",
+    "opened": true,
+    "back": true,
+    "drawerOpen": true,
+    "drawerClosed": true,
+    "overflow": false,
+    "detailBounds": {
+      "x": 484.828125,
+      "y": 74.53125,
+      "right": 783.828125,
+      "bottom": 304.71875,
+      "width": 299
+    },
+    "motionControl": {
+      "visible": true,
+      "x": 657.78125,
+      "y": 331,
+      "right": 714.5625,
+      "bottom": 375
+    },
+    "links": [
+      {
+        "text": "Skip to collection",
+        "href": "#collection"
+      },
+      {
+        "text": "Beyond Doubt home",
+        "href": "index-beyond-doubt.html"
+      },
+      {
+        "text": "SHOP",
+        "href": "https://shopee.ph/beyond.doubt"
+      },
+      {
+        "text": "SHOP SHOPEE",
+        "href": "https://shopee.ph/beyond.doubt"
+      },
+      {
+        "text": "LAZADA",
+        "href": "https://www.lazada.com.ph/shop/beyond-doubt"
+      },
+      {
+        "text": "Shopee",
+        "href": "https://shopee.ph/beyond.doubt"
+      },
+      {
+        "text": "Lazada",
+        "href": "https://www.lazada.com.ph/shop/beyond-doubt"
+      },
+      {
+        "text": "TikTok",
+        "href": "https://www.tiktok.com/@beyonddoubt.clothing"
+      },
+      {
+        "text": "View location on Google Maps",
+        "href": "https://www.google.com/maps/search/?api=1&query=Blk%2027%20Lot%2012%20Pechayan%20Kanan%20Namasape%20HOA%20North%20Fairview%20Quezon%20City"
+      },
+      {
+        "text": "0905 507 9634",
+        "href": "tel:+639055079634"
+      }
+    ]
+  },
+  {
+    "motion": {
+      "parallaxMoves": true,
+      "clickAfterDrag": true
+    }
+  },
+  {
+    "mobileMotion": {
+      "restsWhenPaused": true,
+      "restingDelta": 0.0009999999999763531,
+      "pauseLabel": "PLAY",
+      "playLabel": "PAUSE"
+    }
+  },
+  {
+    "templatePreserved": true,
+    "templateHash": "41234d92add801689f8571b25264e31b682c65b44ea28cba0cebf4a899103e54"
+  }
+]
